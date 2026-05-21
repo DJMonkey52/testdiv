@@ -24,21 +24,21 @@
         }
 
         :root {
-            --glass-bg: rgba(235, 215, 175, 0.94);
-            --glass-border: rgba(160, 120, 70, 0.5);
-            --text-primary: #3b2a1f;
-            --text-secondary: #5e3e2b;
-            --text-muted: #8b6b4a;
-            --accent: #b87c4f;
-            --accent-glow: #d99e6b;
+            --glass-bg: rgba(25, 20, 15, 0.92);
+            --glass-border: rgba(180, 130, 80, 0.45);
+            --text-primary: #ece3d8;
+            --text-secondary: #cbbfaa;
+            --text-muted: #9b8e78;
+            --accent: #c28a5c;
+            --accent-glow: #d9a77a;
             --accent-dark: #8b5a3c;
             --success: #6f9e6f;
             --danger: #c97d60;
-            --border-light: rgba(120, 80, 50, 0.2);
-            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.15);
-            --shadow-md: 0 20px 35px -10px rgba(0, 0, 0, 0.2);
-            --input-bg: rgba(255, 250, 235, 0.98);
-            --card-hover: rgba(184, 124, 79, 0.12);
+            --border-light: rgba(180, 140, 100, 0.2);
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 20px 35px -10px rgba(0, 0, 0, 0.5);
+            --input-bg: rgba(35, 28, 22, 0.95);
+            --card-hover: rgba(194, 138, 92, 0.12);
         }
 
         body.light {
@@ -53,6 +53,8 @@
             --border-light: rgba(0, 0, 0, 0.08);
             --input-bg: rgba(255, 255, 245, 0.98);
             --card-hover: rgba(184, 124, 79, 0.08);
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
         }
 
         .container {
@@ -79,46 +81,59 @@
             align-items: center;
             gap: 15px;
             margin-bottom: 10px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(8px);
+            padding: 12px 28px;
+            border-radius: 60px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-sm);
         }
 
         .logo-icon {
-            width: 65px;
-            height: 65px;
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            border-radius: 22px;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
+            font-size: 26px;
             color: #ffffff;
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             animation: float 3s ease-in-out infinite;
         }
 
         .logo-icon i {
-            font-size: 34px;
+            font-size: 28px;
             filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+            50% { transform: translateY(-6px); }
         }
 
         .logo h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #3b2a1f, var(--accent-glow));
+            background: linear-gradient(135deg, #f0e6d8, var(--accent-glow));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             letter-spacing: 2px;
         }
 
+        body.light .logo h1 {
+            background: linear-gradient(135deg, #3b2a1f, var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
         .subtitle {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 2px;
+            margin-top: 8px;
         }
 
         .theme-toggle {
@@ -144,7 +159,7 @@
         .theme-toggle:hover {
             border-color: var(--accent);
             transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 0 20px rgba(184, 124, 79, 0.4);
+            box-shadow: 0 0 20px rgba(194, 138, 92, 0.4);
         }
 
         .page {
@@ -188,7 +203,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(184, 124, 79, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(194, 138, 92, 0.15), transparent);
             transition: left 0.6s ease;
         }
 
@@ -199,13 +214,13 @@
         .main-card:hover {
             transform: translateY(-12px) scale(1.02);
             border-color: var(--accent);
-            box-shadow: 0 30px 50px -15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 30px 50px -15px rgba(0, 0, 0, 0.5);
         }
 
         .main-card-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, rgba(184, 124, 79, 0.25), rgba(139, 90, 60, 0.15));
+            background: linear-gradient(135deg, rgba(194, 138, 92, 0.25), rgba(139, 90, 60, 0.15));
             border-radius: 28px;
             display: flex;
             align-items: center;
@@ -263,7 +278,7 @@
         .back-btn:hover {
             border-color: var(--accent);
             transform: translateX(-8px);
-            box-shadow: 0 0 20px rgba(184, 124, 79, 0.4);
+            box-shadow: 0 0 20px rgba(194, 138, 92, 0.4);
         }
 
         .glass-card {
@@ -281,7 +296,7 @@
         }
 
         .card-header {
-            background: linear-gradient(135deg, rgba(184, 124, 79, 0.2), rgba(139, 90, 60, 0.1));
+            background: linear-gradient(135deg, rgba(194, 138, 92, 0.2), rgba(139, 90, 60, 0.1));
             padding: 20px 28px;
             border-bottom: 1px solid var(--border-light);
         }
@@ -335,7 +350,7 @@
         .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(184, 124, 79, 0.3);
+            box-shadow: 0 0 0 3px rgba(194, 138, 92, 0.3);
             transform: scale(1.01);
         }
 
@@ -346,7 +361,7 @@
         }
 
         .period-info {
-            background: rgba(184, 124, 79, 0.12);
+            background: rgba(194, 138, 92, 0.12);
             border-radius: 14px;
             padding: 12px 16px;
             text-align: center;
@@ -428,7 +443,7 @@
         .remove-action {
             background: rgba(201, 125, 96, 0.2);
             border: none;
-            color: #c97d60;
+            color: #e08e6e;
             padding: 6px 14px;
             border-radius: 30px;
             cursor: pointer;
@@ -493,15 +508,19 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 10px;
-            background: rgba(0,0,0,0.05);
+            background: rgba(0,0,0,0.2);
             border-radius: 12px;
             padding: 8px 12px;
-            animation: proofFadeIn 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+            animation: proofFadeIn 0.35s cubic-bezier(0.34, 1.2, 0.64, 1);
             transform-origin: left;
         }
 
+        body.light .proof-item {
+            background: rgba(0,0,0,0.04);
+        }
+
         @keyframes proofFadeIn {
-            from { opacity: 0; transform: translateX(-15px) scale(0.9); }
+            from { opacity: 0; transform: translateX(-15px) scale(0.92); }
             to { opacity: 1; transform: translateX(0) scale(1); }
         }
 
@@ -524,13 +543,13 @@
         .proof-item input:focus {
             border-color: var(--accent);
             outline: none;
-            box-shadow: 0 0 0 2px rgba(184,124,79,0.2);
+            box-shadow: 0 0 0 2px rgba(194,138,92,0.2);
         }
 
         .remove-proof {
             background: rgba(201, 125, 96, 0.2);
             border: none;
-            color: #c97d60;
+            color: #e08e6e;
             cursor: pointer;
             padding: 8px 12px;
             border-radius: 10px;
@@ -543,7 +562,7 @@
         }
 
         .add-proof-btn {
-            background: rgba(184, 124, 79, 0.2);
+            background: rgba(194, 138, 92, 0.2);
             border: 1px dashed var(--accent);
             border-radius: 12px;
             padding: 8px 14px;
@@ -558,7 +577,7 @@
         }
 
         .add-proof-btn:hover {
-            background: rgba(184, 124, 79, 0.35);
+            background: rgba(194, 138, 92, 0.35);
             transform: translateY(-2px);
         }
 
@@ -582,7 +601,7 @@
 
         .add-btn {
             width: 100%;
-            background: rgba(184, 124, 79, 0.12);
+            background: rgba(194, 138, 92, 0.12);
             border: 2px dashed var(--accent);
             border-radius: 18px;
             padding: 14px;
@@ -598,7 +617,7 @@
         }
 
         .add-btn:hover {
-            background: rgba(184, 124, 79, 0.25);
+            background: rgba(194, 138, 92, 0.25);
             transform: scale(1.02);
         }
 
@@ -606,10 +625,14 @@
             text-align: center;
             padding: 40px;
             color: var(--text-muted);
-            background: rgba(0, 0, 0, 0.03);
+            background: rgba(0, 0, 0, 0.15);
             border-radius: 20px;
             transition: all 0.3s ease;
             animation: fadeScale 0.3s ease;
+        }
+
+        body.light .empty-state {
+            background: rgba(0, 0, 0, 0.03);
         }
 
         @keyframes fadeScale {
@@ -617,12 +640,8 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        body.light .empty-state {
-            background: rgba(0, 0, 0, 0.02);
-        }
-
         .total-points-bar {
-            background: rgba(184, 124, 79, 0.15);
+            background: rgba(194, 138, 92, 0.15);
             border-radius: 20px;
             padding: 15px 22px;
             margin: 20px 0 18px;
@@ -679,7 +698,7 @@
         .submit-btn:hover {
             transform: translateY(-3px);
             filter: brightness(1.05);
-            box-shadow: 0 10px 30px rgba(184, 124, 79, 0.5);
+            box-shadow: 0 10px 30px rgba(194, 138, 92, 0.5);
         }
 
         .footer-signature {
@@ -711,18 +730,17 @@
         .alert.success {
             background: rgba(111, 158, 111, 0.15);
             border-left: 4px solid #6f9e6f;
-            color: #6f9e6f;
+            color: #8fbb8f;
             display: flex;
         }
 
         .alert.error {
             background: rgba(201, 125, 96, 0.12);
             border-left: 4px solid #c97d60;
-            color: #c97d60;
+            color: #e08e6e;
             display: flex;
         }
 
-        /* Анимация обновления баллов */
         @keyframes pointsPulse {
             0% { transform: scale(1); opacity: 0.7; }
             50% { transform: scale(1.1); opacity: 1; }
@@ -739,6 +757,9 @@
             .proofs-section { grid-column: span 1; }
             .period-row { grid-template-columns: 1fr; }
             .logo h1 { font-size: 1.8rem; }
+            .logo { padding: 8px 20px; }
+            .logo-icon { width: 40px; height: 40px; font-size: 20px; }
+            .logo-icon i { font-size: 22px; }
         }
     </style>
 </head>
@@ -808,34 +829,15 @@
 
     <script>
         const ACTIVITY_POINTS = {
-            "1 час поста": 10,
-            "Тренировка по пилотированию / парашютированию": 3,
-            "Тренировка уставов и кодексов (практика)": 5,
-            "Тренировка по вождению бараков": 4,
-            "Тренировка по стрельбе": 5,
-            "Тренировка по физ.подготовке": 3,
-            "Тренировка по маскировке": 3,
-            "Участие в поставках NG, EMS": 5,
-            "Участие в спец. операции (Усиленный патруль, рейд, анальгетик, отбитие поезда)": 5,
-            "Участие на проверке от EMS": 5,
-            "Участие на проверке от прокуратуры": 10,
-            "Участие в глобальном мероприятии": 10,
-            "Участие в мероприятии": 5,
-            "Лекция": 5,
-            "Лекция по воздушной подготовке": 2,
-            "Отражение нападения на форт Занкудо": 10,
-            "Отражение нападения на ФТ": 5,
-            "Задержание": 5,
-            "Расстановка бараков": 5,
-            "Помощь на рекрутировании": 3,
-            "Участие в дропе": 5,
-            "Отбитие поезда": 5,
-            "Захват черного рынка": 7,
-            "Один проверенный отчет на повышение": 3,
-            "Один проведенный экзамен": 5,
-            "Одна проведенная тренировка": 10,
-            "Одна проведенная лекция": 5,
-            "Проведение КЧ": 15
+            "1 час поста": 10, "Тренировка по пилотированию / парашютированию": 3, "Тренировка уставов и кодексов (практика)": 5,
+            "Тренировка по вождению бараков": 4, "Тренировка по стрельбе": 5, "Тренировка по физ.подготовке": 3,
+            "Тренировка по маскировке": 3, "Участие в поставках NG, EMS": 5, "Участие в спец. операции (Усиленный патруль, рейд, анальгетик, отбитие поезда)": 5,
+            "Участие на проверке от EMS": 5, "Участие на проверке от прокуратуры": 10, "Участие в глобальном мероприятии": 10,
+            "Участие в мероприятии": 5, "Лекция": 5, "Лекция по воздушной подготовке": 2,
+            "Отражение нападения на форт Занкудо": 10, "Отражение нападения на ФТ": 5, "Задержание": 5,
+            "Расстановка бараков": 5, "Помощь на рекрутировании": 3, "Участие в дропе": 5,
+            "Отбитие поезда": 5, "Захват черного рынка": 7, "Один проверенный отчет на повышение": 3,
+            "Один проведенный экзамен": 5, "Одна проведенная тренировка": 10, "Одна проведенная лекция": 5, "Проведение КЧ": 15
         };
         const ACTIVITY_NAMES = Object.keys(ACTIVITY_POINTS);
         const RANKS = ["Специалист (3)", "Капрал (4)", "Сержант (5)", "Штаб-сержант (6)", "Уорент-офицер (7)", "Старший Уорент-офицер (8)", "Лейтенант (9)", "Капитан (10)", "Майор (11)", "Подполковник (12)"];
@@ -872,10 +874,7 @@
             setTimeout(() => totalSpan.classList.remove('points-badge-update'), 300);
         }
 
-        function updateTotalDisplay() { 
-            document.getElementById('totalPoints').innerText = totalPoints();
-            animateTotalPoints();
-        }
+        function updateTotalDisplay() { document.getElementById('totalPoints').innerText = totalPoints(); animateTotalPoints(); }
 
         function renderActionsList() {
             const container = document.getElementById('actionsList');
@@ -888,115 +887,36 @@
                 return;
             }
             emptyDiv.style.display = 'none';
-            container.innerHTML = currentActions.map((a, i) => createActionHTML(a, i)).join('');
+            container.innerHTML = currentActions.map((a, i) => `<div class="action-item" data-idx="${i}"><div class="action-header"><div class="action-title"><i class="fas fa-tag"></i> ДЕЙСТВИЕ #${i+1}</div><button class="remove-action" data-idx="${i}"><i class="fas fa-trash"></i> Удалить</button></div><div class="action-fields"><div class="action-field"><label>ТИП АКТИВНОСТИ</label><select class="action-type" data-idx="${i}"><option value="">-- Выберите --</option>${ACTIVITY_NAMES.map(n => `<option value="${n}" ${a.type === n ? 'selected' : ''}>${n} (${ACTIVITY_POINTS[n]} баллов)</option>`).join('')}</select></div><div class="action-field"><label>КОЛ-ВО</label><input type="number" class="action-count" data-idx="${i}" value="${a.count || 1}" min="1"></div><div class="proofs-section"><label><i class="fas fa-images"></i> ДОКАЗАТЕЛЬСТВА (ссылки)</label><div class="proofs-list">${(a.proofs || ['']).map((p, pi) => `<div class="proof-item" data-proof-idx="${pi}"><input type="text" class="proof-input" data-action="${i}" data-proof="${pi}" value="${escapeHtml(p)}" placeholder="https://пример.com/скриншот">${(a.proofs.length > 1) ? `<button class="remove-proof" data-action="${i}" data-proof="${pi}"><i class="fas fa-times"></i></button>` : ''}</div>`).join('')}</div><button class="add-proof-btn" data-action="${i}"><i class="fas fa-plus"></i> Добавить доказательство</button></div></div><div class="points-row"><span class="points-badge" data-points-idx="${i}"><i class="fas fa-star"></i> БАЛЛЫ: ${calcPoints(a)}</span></div></div>`).join('');
             attachAllEvents();
             updateTotalDisplay();
         }
 
-        function createActionHTML(a, idx) {
-            return `
-                <div class="action-item" data-idx="${idx}" data-original-idx="${idx}">
-                    <div class="action-header"><div class="action-title"><i class="fas fa-tag"></i> ДЕЙСТВИЕ #${idx+1}</div><button class="remove-action" data-idx="${idx}"><i class="fas fa-trash"></i> Удалить</button></div>
-                    <div class="action-fields"><div class="action-field"><label>ТИП АКТИВНОСТИ</label><select class="action-type" data-idx="${idx}"><option value="">-- Выберите --</option>${ACTIVITY_NAMES.map(n => `<option value="${n}" ${a.type === n ? 'selected' : ''}>${n} (${ACTIVITY_POINTS[n]} баллов)</option>`).join('')}</select></div>
-                    <div class="action-field"><label>КОЛ-ВО</label><input type="number" class="action-count" data-idx="${idx}" value="${a.count || 1}" min="1"></div>
-                    <div class="proofs-section"><label><i class="fas fa-images"></i> ДОКАЗАТЕЛЬСТВА (ссылки)</label><div class="proofs-list">${(a.proofs || ['']).map((p, pi) => `<div class="proof-item" data-proof-idx="${pi}"><input type="text" class="proof-input" data-action="${idx}" data-proof="${pi}" value="${escapeHtml(p)}" placeholder="https://пример.com/скриншот">${(a.proofs.length > 1) ? `<button class="remove-proof" data-action="${idx}" data-proof="${pi}"><i class="fas fa-times"></i></button>` : ''}</div>`).join('')}</div>
-                    <button class="add-proof-btn" data-action="${idx}"><i class="fas fa-plus"></i> Добавить доказательство</button></div></div>
-                    <div class="points-row"><span class="points-badge" data-points-idx="${idx}"><i class="fas fa-star"></i> БАЛЛЫ: ${calcPoints(a)}</span></div>
-                </div>`;
-        }
-
-        function addAction() { 
-            currentActions.push({ type: '', count: 1, proofs: [''] }); 
-            renderActionsList(); 
-        }
+        function addAction() { currentActions.push({ type: '', count: 1, proofs: [''] }); renderActionsList(); }
 
         function attachAllEvents() {
             const container = document.getElementById('actionsList');
-            
             container.querySelectorAll('.action-item').forEach(el => {
                 const idx = parseInt(el.dataset.idx);
-                
-                const removeBtn = el.querySelector('.remove-action');
-                removeBtn.onclick = () => {
+                el.querySelector('.remove-action').onclick = () => {
                     el.style.animation = 'actionRemoveAnim 0.3s ease forwards';
-                    setTimeout(() => {
-                        currentActions.splice(idx, 1);
-                        if (currentActions.length === 0) {
-                            const emptyDiv = document.getElementById('emptyActions');
-                            container.innerHTML = '';
-                            emptyDiv.style.display = 'block';
-                            emptyDiv.style.animation = 'fadeScale 0.3s ease';
-                            updateTotalDisplay();
-                        } else {
-                            renderActionsList();
-                        }
-                    }, 280);
+                    setTimeout(() => { currentActions.splice(idx, 1); renderActionsList(); }, 280);
                 };
-                
                 const typeSel = el.querySelector('.action-type');
-                typeSel.onchange = () => { 
-                    currentActions[idx].type = typeSel.value; 
-                    const pointsSpan = el.querySelector('.points-badge');
-                    pointsSpan.innerHTML = `<i class="fas fa-star"></i> БАЛЛЫ: ${calcPoints(currentActions[idx])}`;
-                    pointsSpan.classList.add('points-badge-update');
-                    setTimeout(() => pointsSpan.classList.remove('points-badge-update'), 300);
-                    updateTotalDisplay();
-                };
-                
+                typeSel.onchange = () => { currentActions[idx].type = typeSel.value; renderActionsList(); };
                 const cntInp = el.querySelector('.action-count');
-                cntInp.oninput = () => { 
-                    currentActions[idx].count = Math.max(1, parseInt(cntInp.value) || 1); 
-                    const pointsSpan = el.querySelector('.points-badge');
-                    pointsSpan.innerHTML = `<i class="fas fa-star"></i> БАЛЛЫ: ${calcPoints(currentActions[idx])}`;
-                    pointsSpan.classList.add('points-badge-update');
-                    setTimeout(() => pointsSpan.classList.remove('points-badge-update'), 300);
-                    updateTotalDisplay();
-                };
-                
-                el.querySelectorAll('.proof-input').forEach(inp => {
-                    inp.onchange = () => { if(currentActions[idx]?.proofs) currentActions[idx].proofs[parseInt(inp.dataset.proof)] = inp.value; };
-                });
-                
-                el.querySelectorAll('.remove-proof').forEach(btn => {
-                    btn.onclick = (e) => { 
-                        e.stopPropagation(); 
-                        const pi = parseInt(btn.dataset.proof); 
-                        const proofItem = btn.closest('.proof-item');
-                        if(currentActions[idx].proofs.length > 1){
-                            proofItem.style.animation = 'proofRemoveAnim 0.25s ease forwards';
-                            setTimeout(() => {
-                                currentActions[idx].proofs.splice(pi, 1);
-                                renderActionsList();
-                            }, 240);
-                        }
-                    };
-                });
-                
-                const addProofBtn = el.querySelector('.add-proof-btn');
-                addProofBtn.onclick = () => {
-                    if(!currentActions[idx].proofs) currentActions[idx].proofs = [''];
-                    currentActions[idx].proofs.push('');
-                    renderActionsList();
-                };
+                cntInp.oninput = () => { currentActions[idx].count = Math.max(1, parseInt(cntInp.value) || 1); renderActionsList(); };
+                el.querySelectorAll('.proof-input').forEach(inp => inp.onchange = () => { if(currentActions[idx]?.proofs) currentActions[idx].proofs[parseInt(inp.dataset.proof)] = inp.value; });
+                el.querySelectorAll('.remove-proof').forEach(btn => btn.onclick = (e) => { e.stopPropagation(); const pi = parseInt(btn.dataset.proof); const proofItem = btn.closest('.proof-item'); if(currentActions[idx].proofs.length > 1){ proofItem.style.animation = 'proofRemoveAnim 0.25s ease forwards'; setTimeout(() => { currentActions[idx].proofs.splice(pi, 1); renderActionsList(); }, 240); } });
+                el.querySelector('.add-proof-btn').onclick = () => { if(!currentActions[idx].proofs) currentActions[idx].proofs = ['']; currentActions[idx].proofs.push(''); renderActionsList(); };
             });
         }
 
-        async function sendToDiscord(webhook, title, fields, color = 0xb87c4f) { 
-            await fetch(webhook, { 
-                method: 'POST', 
-                headers: { 'Content-Type': 'application/json' }, 
-                body: JSON.stringify({ 
-                    content: `${ROLES_TAG}\n🟤 **НОВЫЙ ОТЧЁТ DIVISION** 🟤`, 
-                    embeds: [{ title, color, fields, footer: { text: "Division | By Alexandr DeHaus & Evgeny Bauer" }, timestamp: new Date().toISOString() }], 
-                    avatar_url: "https://cdn-icons-png.flaticon.com/512/3159/3159225.png" 
-                }) 
-            }); 
-        }
+        async function sendToDiscord(webhook, title, fields, color = 0xc28a5c) { await fetch(webhook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ content: `${ROLES_TAG}\n🟤 **НОВЫЙ ОТЧЁТ DIVISION** 🟤`, embeds: [{ title, color, fields, footer: { text: "Division | By Alexandr DeHaus & Evgeny Bauer" }, timestamp: new Date().toISOString() }], avatar_url: "https://cdn-icons-png.flaticon.com/512/3159/3159225.png" }) }); }
 
         async function submitForm() {
             const btn = document.getElementById('submitBtn');
-            btn.disabled = true; 
-            const originalHTML = btn.innerHTML;
+            btn.disabled = true; const originalHTML = btn.innerHTML;
             btn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> ОТПРАВКА...';
             try {
                 if (currentType === 'weekly') {
@@ -1006,12 +926,7 @@
                     let acts = '', total = 0;
                     currentActions.forEach((a,i) => { const pts = calcPoints(a); total += pts; const proofs = (a.proofs?.filter(p=>p).map(p=>`• ${p}`).join('\n') || 'Нет'); acts += `**${i+1}. ${a.type || 'Не выбрано'}** ×${a.count||1} = ${pts} баллов\n📎 Доказательства:\n${proofs}\n\n`; });
                     if(currentActions.length===0) acts = 'Нет действий';
-                    await sendToDiscord(WEBHOOKS.weekly, '📅 Еженедельный отчёт Division', [
-                        { name: '👮 Сотрудник', value: name, inline: true }, 
-                        { name: '🏅 Звание', value: rank, inline: true }, 
-                        { name: '📊 Активности', value: acts.substring(0,900) }, 
-                        { name: '🏆 ИТОГО БАЛЛОВ', value: `${total}`, inline: true }
-                    ]);
+                    await sendToDiscord(WEBHOOKS.weekly, '📅 Еженедельный отчёт Division', [{ name: '👮 Сотрудник', value: name, inline: true }, { name: '🏅 Звание', value: rank, inline: true }, { name: '📊 Активности', value: acts.substring(0,900) }, { name: '🏆 ИТОГО БАЛЛОВ', value: `${total}`, inline: true }]);
                     showAlert('formAlert', '✅ Отчёт отправлен!', 'success');
                     resetForm();
                 } else if (currentType === 'promotion') {
@@ -1022,46 +937,17 @@
                     let acts = '', total = 0;
                     currentActions.forEach((a,i) => { const pts = calcPoints(a); total += pts; const proofs = (a.proofs?.filter(p=>p).map(p=>`• ${p}`).join('\n') || 'Нет'); acts += `**${i+1}. ${a.type || 'Не выбрано'}** ×${a.count||1} = ${pts} баллов\n📎 Доказательства:\n${proofs}\n\n`; });
                     if(currentActions.length===0) acts = 'Нет достижений';
-                    await sendToDiscord(WEBHOOKS.promotion, '⭐ Запрос на повышение звания Division', [
-                        { name: '👤 Сотрудник', value: name, inline: true }, 
-                        { name: '🎖️ Текущее звание', value: curRank, inline: true }, 
-                        { name: '⭐ Желаемое звание', value: desRank, inline: true }, 
-                        { name: '📜 Достижения', value: acts.substring(0,900) }, 
-                        { name: '🏆 Сумма баллов', value: `${total}`, inline: true }
-                    ]);
+                    await sendToDiscord(WEBHOOKS.promotion, '⭐ Запрос на повышение звания Division', [{ name: '👤 Сотрудник', value: name, inline: true }, { name: '🎖️ Текущее звание', value: curRank, inline: true }, { name: '⭐ Желаемое звание', value: desRank, inline: true }, { name: '📜 Достижения', value: acts.substring(0,900) }, { name: '🏆 Сумма баллов', value: `${total}`, inline: true }]);
                     showAlert('formAlert', '✅ Запрос отправлен!', 'success');
                     resetForm();
                 }
             } catch(err) { showAlert('formAlert', `❌ Ошибка: ${err.message}`, 'error'); }
             finally { btn.disabled = false; btn.innerHTML = originalHTML; }
         }
-        
-        function resetForm() { 
-            currentActions = []; 
-            renderActionsList(); 
-            if(currentType==='weekly'){ 
-                const wName=document.getElementById('wName'); if(wName) wName.value=''; 
-                const wRank=document.getElementById('wRank'); if(wRank) wRank.value=''; 
-                setDefaultDates(); 
-            } else if(currentType==='promotion'){ 
-                const pName=document.getElementById('pName'); if(pName) pName.value=''; 
-                const pCur=document.getElementById('pCurrentRank'); if(pCur) pCur.value=''; 
-                const pDes=document.getElementById('pDesiredRank'); if(pDes) pDes.value=''; 
-            } 
-        }
-        
-        function setDefaultDates() { 
-            const today=new Date(); const monday=new Date(today); 
-            monday.setDate(today.getDate()-(today.getDay()===0?6:today.getDay()-1)); 
-            const sunday=new Date(monday); sunday.setDate(monday.getDate()+6); 
-            const start=document.getElementById('wStart'), end=document.getElementById('wEnd'), info=document.getElementById('periodInfo'); 
-            if(start&&end){ start.value=monday.toISOString().split('T')[0]; end.value=sunday.toISOString().split('T')[0]; if(info) info.innerHTML=`${formatDate(start.value)} – ${formatDate(end.value)} (7 дн.)`; } 
-        }
-        
-        function updatePeriodInfo() { 
-            const start=document.getElementById('wStart')?.value, end=document.getElementById('wEnd')?.value, info=document.getElementById('periodInfo'); 
-            if(info&&start&&end){ const days=Math.ceil((new Date(end)-new Date(start))/86400000)+1; info.innerHTML=`${formatDate(start)} – ${formatDate(end)} (${days} дн.)`; } 
-        }
+
+        function resetForm() { currentActions = []; renderActionsList(); if(currentType==='weekly'){ const wName=document.getElementById('wName'); if(wName) wName.value=''; const wRank=document.getElementById('wRank'); if(wRank) wRank.value=''; setDefaultDates(); } else if(currentType==='promotion'){ const pName=document.getElementById('pName'); if(pName) pName.value=''; const pCur=document.getElementById('pCurrentRank'); if(pCur) pCur.value=''; const pDes=document.getElementById('pDesiredRank'); if(pDes) pDes.value=''; } }
+        function setDefaultDates() { const today=new Date(); const monday=new Date(today); monday.setDate(today.getDate()-(today.getDay()===0?6:today.getDay()-1)); const sunday=new Date(monday); sunday.setDate(monday.getDate()+6); const start=document.getElementById('wStart'), end=document.getElementById('wEnd'), info=document.getElementById('periodInfo'); if(start&&end){ start.value=monday.toISOString().split('T')[0]; end.value=sunday.toISOString().split('T')[0]; if(info) info.innerHTML=`${formatDate(start.value)} – ${formatDate(end.value)} (7 дн.)`; } }
+        function updatePeriodInfo() { const start=document.getElementById('wStart')?.value, end=document.getElementById('wEnd')?.value, info=document.getElementById('periodInfo'); if(info&&start&&end){ const days=Math.ceil((new Date(end)-new Date(start))/86400000)+1; info.innerHTML=`${formatDate(start)} – ${formatDate(end)} (${days} дн.)`; } }
 
         function showFormPage(type) {
             currentType=type; currentActions=[];
@@ -1073,10 +959,8 @@
                 title.innerHTML='<i class="fas fa-calendar-week"></i> 📊 Еженедельный отчёт Division';
                 fieldsDiv.innerHTML=`<div class="input-group"><label><i class="fas fa-user"></i> ИМЯ ФАМИЛИЯ (никнейм)</label><input type="text" id="wName" placeholder="Alexandr DeHaus"></div><div class="input-group"><label><i class="fas fa-medal"></i> ВАШЕ ЗВАНИЕ</label><select id="wRank"><option value="">-- Выберите --</option>${rankOptions}</select></div><div class="period-row"><div class="input-group"><label><i class="fas fa-calendar-alt"></i> ДАТА НАЧАЛА</label><input type="date" id="wStart"></div><div class="input-group"><label><i class="fas fa-calendar-alt"></i> ДАТА ОКОНЧАНИЯ</label><input type="date" id="wEnd"></div></div><div class="period-info" id="periodInfo"></div>`;
                 actionsSection.style.display='block'; totalBar.style.display='flex';
-                setDefaultDates(); 
-                document.getElementById('wStart')?.addEventListener('change',updatePeriodInfo); 
-                document.getElementById('wEnd')?.addEventListener('change',updatePeriodInfo);
-            } else if(type==='promotion'){
+                setDefaultDates(); document.getElementById('wStart')?.addEventListener('change',updatePeriodInfo); document.getElementById('wEnd')?.addEventListener('change',updatePeriodInfo);
+            } else {
                 title.innerHTML='<i class="fas fa-arrow-up"></i> ⭐ Запрос на повышение звания Division';
                 fieldsDiv.innerHTML=`<div class="input-group"><label><i class="fas fa-user"></i> ПОЛНОЕ ИМЯ</label><input type="text" id="pName" placeholder="Alexandr DeHaus"></div><div class="input-group"><label><i class="fas fa-arrow-down"></i> ТЕКУЩЕЕ ЗВАНИЕ</label><select id="pCurrentRank"><option value="">-- Выберите --</option>${rankOptions}</select></div><div class="input-group"><label><i class="fas fa-arrow-up"></i> ЖЕЛАЕМОЕ ЗВАНИЕ</label><select id="pDesiredRank"><option value="">-- Выберите --</option>${rankOptions}</select></div>`;
                 actionsSection.style.display='block'; totalBar.style.display='flex';
@@ -1088,7 +972,6 @@
         document.getElementById('addActionBtn').onclick=addAction;
         document.getElementById('submitBtn').onclick=submitForm;
         document.querySelectorAll('.main-card').forEach(card=>card.onclick=()=>showFormPage(card.dataset.type));
-        
         const themeSwitch=document.getElementById('themeSwitch');
         themeSwitch.onclick=()=>{ document.body.classList.toggle('light'); const isLight=document.body.classList.contains('light'); localStorage.setItem('mpbTheme',isLight?'light':'dark'); const icon=themeSwitch.querySelector('i'); const span=themeSwitch.querySelector('span'); if(isLight){ icon.className='fas fa-moon'; span.innerText='Тёмная тема'; }else{ icon.className='fas fa-sun'; span.innerText='Светлая тема'; } };
         if(localStorage.getItem('mpbTheme')==='light'){ document.body.classList.add('light'); themeSwitch.querySelector('i').className='fas fa-moon'; themeSwitch.querySelector('span').innerText='Тёмная тема'; }
