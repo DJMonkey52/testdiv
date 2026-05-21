@@ -15,48 +15,46 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #0a0a0c;
+            background: #0d1a12;
             min-height: 100vh;
         }
 
-        /* Только для тёмной темы (основной) — тёмный фон */
         body.light {
-            background: #fdf8f0;
+            background: #f5f0e6;
         }
 
         :root {
-            --glass-bg: rgba(18, 18, 22, 0.94);
-            --glass-border: rgba(180, 130, 80, 0.45);
-            --text-primary: #ece3d8;
-            --text-secondary: #cbbfaa;
-            --text-muted: #9b8e78;
-            --accent: #c28a5c;
-            --accent-glow: #d9a77a;
-            --accent-dark: #8b5a3c;
+            --glass-bg: rgba(20, 32, 24, 0.94);
+            --glass-border: rgba(110, 85, 55, 0.5);
+            --text-primary: #e8e0cd;
+            --text-secondary: #c8bc9a;
+            --text-muted: #9e8f6e;
+            --accent: #8b7355;
+            --accent-glow: #a68966;
+            --accent-dark: #5d4e3a;
             --success: #6f9e6f;
-            --danger: #c97d60;
-            --border-light: rgba(180, 140, 100, 0.2);
+            --danger: #b87a5c;
+            --border-light: rgba(110, 85, 55, 0.25);
             --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.5);
             --shadow-md: 0 20px 35px -10px rgba(0, 0, 0, 0.6);
-            --input-bg: rgba(30, 30, 36, 0.95);
-            --card-hover: rgba(194, 138, 92, 0.1);
+            --input-bg: rgba(30, 45, 35, 0.95);
+            --card-hover: rgba(139, 115, 85, 0.12);
         }
 
         body.light {
-            --glass-bg: rgba(255, 250, 240, 0.96);
-            --glass-border: rgba(184, 124, 79, 0.35);
-            --text-primary: #3b2a1f;
-            --text-secondary: #5e3e2b;
-            --text-muted: #8b6b4a;
-            --accent: #b87c4f;
-            --accent-glow: #d99e6b;
-            --accent-dark: #8b5a3c;
+            --glass-bg: rgba(255, 252, 240, 0.96);
+            --glass-border: rgba(139, 115, 85, 0.35);
+            --text-primary: #2c2418;
+            --text-secondary: #5a4a36;
+            --text-muted: #8b7355;
+            --accent: #8b7355;
+            --accent-glow: #a68966;
+            --accent-dark: #5d4e3a;
             --border-light: rgba(0, 0, 0, 0.08);
             --input-bg: rgba(255, 255, 245, 0.98);
-            --card-hover: rgba(184, 124, 79, 0.08);
+            --card-hover: rgba(139, 115, 85, 0.08);
             --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.1);
             --shadow-md: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
-            background: #fdf8f0;
         }
 
         .container {
@@ -100,7 +98,7 @@
             align-items: center;
             justify-content: center;
             font-size: 26px;
-            color: #ffffff;
+            color: #f0ebdf;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             animation: float 3s ease-in-out infinite;
         }
@@ -118,7 +116,7 @@
         .logo h1 {
             font-size: 2.2rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #f0e6d8, var(--accent-glow));
+            background: linear-gradient(135deg, #e8e0cd, var(--accent-glow));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -126,7 +124,7 @@
         }
 
         body.light .logo h1 {
-            background: linear-gradient(135deg, #3b2a1f, var(--accent));
+            background: linear-gradient(135deg, #2c2418, var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
         }
@@ -161,7 +159,7 @@
         .theme-toggle:hover {
             border-color: var(--accent);
             transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 0 20px rgba(194, 138, 92, 0.4);
+            box-shadow: 0 0 20px rgba(139, 115, 85, 0.4);
         }
 
         .page {
@@ -205,7 +203,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(194, 138, 92, 0.15), transparent);
+            background: linear-gradient(90deg, transparent, rgba(139, 115, 85, 0.15), transparent);
             transition: left 0.6s ease;
         }
 
@@ -222,7 +220,7 @@
         .main-card-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, rgba(194, 138, 92, 0.25), rgba(139, 90, 60, 0.15));
+            background: linear-gradient(135deg, rgba(139, 115, 85, 0.25), rgba(93, 78, 58, 0.15));
             border-radius: 28px;
             display: flex;
             align-items: center;
@@ -280,7 +278,7 @@
         .back-btn:hover {
             border-color: var(--accent);
             transform: translateX(-8px);
-            box-shadow: 0 0 20px rgba(194, 138, 92, 0.4);
+            box-shadow: 0 0 20px rgba(139, 115, 85, 0.4);
         }
 
         .glass-card {
@@ -298,7 +296,7 @@
         }
 
         .card-header {
-            background: linear-gradient(135deg, rgba(194, 138, 92, 0.2), rgba(139, 90, 60, 0.1));
+            background: linear-gradient(135deg, rgba(139, 115, 85, 0.2), rgba(93, 78, 58, 0.1));
             padding: 20px 28px;
             border-bottom: 1px solid var(--border-light);
         }
@@ -352,7 +350,7 @@
         .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(194, 138, 92, 0.3);
+            box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.3);
             transform: scale(1.01);
         }
 
@@ -363,7 +361,7 @@
         }
 
         .period-info {
-            background: rgba(194, 138, 92, 0.12);
+            background: rgba(139, 115, 85, 0.12);
             border-radius: 14px;
             padding: 12px 16px;
             text-align: center;
@@ -391,7 +389,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Анимация удаления действия — плавное исчезание и схлопывание */
         .action-item-removing {
             animation: actionRemoveAnim 0.25s ease forwards !important;
         }
@@ -422,9 +419,9 @@
         }
 
         .remove-action {
-            background: rgba(201, 125, 96, 0.2);
+            background: rgba(184, 122, 92, 0.2);
             border: none;
-            color: #e08e6e;
+            color: #c98a6a;
             padding: 6px 14px;
             border-radius: 30px;
             cursor: pointer;
@@ -434,7 +431,7 @@
         }
 
         .remove-action:hover {
-            background: rgba(201, 125, 96, 0.4);
+            background: rgba(184, 122, 92, 0.4);
             transform: scale(1.05);
         }
 
@@ -489,17 +486,16 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 10px;
-            background: rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.25);
             border-radius: 12px;
             padding: 8px 12px;
             transition: all 0.2s ease;
         }
 
         body.light .proof-item {
-            background: rgba(0,0,0,0.04);
+            background: rgba(0,0,0,0.05);
         }
 
-        /* Анимация появления доказательства — только сам элемент */
         .proof-item-added {
             animation: proofFadeIn 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
@@ -509,7 +505,6 @@
             to { opacity: 1; transform: translateX(0); }
         }
 
-        /* Анимация удаления доказательства */
         .proof-item-removing {
             animation: proofRemoveAnim 0.2s ease forwards !important;
         }
@@ -533,13 +528,13 @@
         .proof-item input:focus {
             border-color: var(--accent);
             outline: none;
-            box-shadow: 0 0 0 2px rgba(194,138,92,0.2);
+            box-shadow: 0 0 0 2px rgba(139,115,85,0.2);
         }
 
         .remove-proof {
-            background: rgba(201, 125, 96, 0.2);
+            background: rgba(184, 122, 92, 0.2);
             border: none;
-            color: #e08e6e;
+            color: #c98a6a;
             cursor: pointer;
             padding: 8px 12px;
             border-radius: 10px;
@@ -547,12 +542,12 @@
         }
 
         .remove-proof:hover {
-            background: rgba(201, 125, 96, 0.4);
+            background: rgba(184, 122, 92, 0.4);
             transform: scale(1.05);
         }
 
         .add-proof-btn {
-            background: rgba(194, 138, 92, 0.2);
+            background: rgba(139, 115, 85, 0.2);
             border: 1px dashed var(--accent);
             border-radius: 12px;
             padding: 8px 14px;
@@ -567,7 +562,7 @@
         }
 
         .add-proof-btn:hover {
-            background: rgba(194, 138, 92, 0.35);
+            background: rgba(139, 115, 85, 0.35);
             transform: translateY(-2px);
         }
 
@@ -585,13 +580,13 @@
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 700;
-            color: #ffffff;
+            color: #f0ebdf;
             transition: all 0.2s ease;
         }
 
         .add-btn {
             width: 100%;
-            background: rgba(194, 138, 92, 0.12);
+            background: rgba(139, 115, 85, 0.12);
             border: 2px dashed var(--accent);
             border-radius: 18px;
             padding: 14px;
@@ -607,7 +602,7 @@
         }
 
         .add-btn:hover {
-            background: rgba(194, 138, 92, 0.25);
+            background: rgba(139, 115, 85, 0.25);
             transform: scale(1.02);
         }
 
@@ -631,7 +626,7 @@
         }
 
         .total-points-bar {
-            background: rgba(194, 138, 92, 0.15);
+            background: rgba(139, 115, 85, 0.15);
             border-radius: 20px;
             padding: 15px 22px;
             margin: 20px 0 18px;
@@ -659,7 +654,7 @@
             border-radius: 24px;
             font-size: 1rem;
             font-weight: 700;
-            color: #ffffff;
+            color: #f0ebdf;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -677,7 +672,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
             transition: left 0.5s ease;
         }
 
@@ -688,7 +683,7 @@
         .submit-btn:hover {
             transform: translateY(-3px);
             filter: brightness(1.05);
-            box-shadow: 0 10px 30px rgba(194, 138, 92, 0.5);
+            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.5);
         }
 
         .footer-signature {
@@ -725,9 +720,9 @@
         }
 
         .alert.error {
-            background: rgba(201, 125, 96, 0.12);
-            border-left: 4px solid #c97d60;
-            color: #e08e6e;
+            background: rgba(184, 122, 92, 0.12);
+            border-left: 4px solid #b87a5c;
+            color: #c98a6a;
             display: flex;
         }
 
@@ -763,7 +758,7 @@
         <div class="header">
             <div class="logo">
                 <div class="logo-icon">
-                    <i class="fas fa-shield-halbed"></i>
+                    <i class="fas fa-tree"></i>
                 </div>
                 <h1>Division</h1>
             </div>
@@ -910,7 +905,6 @@
                     if(!currentActions[idx].proofs) currentActions[idx].proofs = ['']; 
                     currentActions[idx].proofs.push(''); 
                     renderActionsList();
-                    // Анимация для нового доказательства
                     setTimeout(() => {
                         const newProof = document.querySelector(`.action-item[data-idx="${idx}"] .proof-item:last-child`);
                         if(newProof) newProof.classList.add('proof-item-added');
@@ -919,7 +913,7 @@
             });
         }
 
-        async function sendToDiscord(webhook, title, fields, color = 0xc28a5c) { await fetch(webhook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ content: `${ROLES_TAG}\n🟤 **НОВЫЙ ОТЧЁТ DIVISION** 🟤`, embeds: [{ title, color, fields, footer: { text: "Division | By Alexandr DeHaus & Evgeny Bauer" }, timestamp: new Date().toISOString() }], avatar_url: "https://cdn-icons-png.flaticon.com/512/3159/3159225.png" }) }); }
+        async function sendToDiscord(webhook, title, fields, color = 0x8b7355) { await fetch(webhook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ content: `${ROLES_TAG}\n🌳 **НОВЫЙ ОТЧЁТ DIVISION** 🌳`, embeds: [{ title, color, fields, footer: { text: "Division | By Alexandr DeHaus & Evgeny Bauer" }, timestamp: new Date().toISOString() }], avatar_url: "https://cdn-icons-png.flaticon.com/512/3159/3159225.png" }) }); }
 
         async function submitForm() {
             const btn = document.getElementById('submitBtn');
