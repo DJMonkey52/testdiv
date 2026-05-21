@@ -832,6 +832,7 @@
             promotion: 'https://discord.com/api/webhooks/1507115779483504804/Wiq5MsZ6xxCULZYhqa_QW5Oa_2ehniOU8IDmhzeaNMnuELYpZGNJLmrea09pfQdHJ_MX'
         };
         const ROLES_TAG = '<@&793440124067250207> <@&792079582500880415> <@&792076763941175296>';
+        const BOT_AVATAR_URL = 'https://s.fotora.ru/de458c5e3d74805d.png';
 
         let currentType = null;
         let currentActions = [];
@@ -913,7 +914,24 @@
             });
         }
 
-        async function sendToDiscord(webhook, title, fields, color = 0x8b5a3e) { await fetch(webhook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ content: `${ROLES_TAG}\n🔥 **НОВЫЙ ОТЧЁТ DIVISION** 🔥`, embeds: [{ title, color, fields, footer: { text: "Division | By Alexandr DeHaus & Evgeny Bauer" }, timestamp: new Date().toISOString() }], avatar_url: "https://cdn-icons-png.flaticon.com/512/3159/3159225.png" }) }); }
+        async function sendToDiscord(webhook, title, fields, color = 0x8b5a3e) { 
+            await fetch(webhook, { 
+                method: 'POST', 
+                headers: { 'Content-Type': 'application/json' }, 
+                body: JSON.stringify({ 
+                    content: `${ROLES_TAG}\n🔥 **НОВЫЙ ОТЧЁТ DIVISION** 🔥`, 
+                    embeds: [{ 
+                        title, 
+                        color, 
+                        fields, 
+                        footer: { text: "Division | By Alexandr DeHaus & Evgeny Bauer" }, 
+                        timestamp: new Date().toISOString() 
+                    }], 
+                    avatar_url: BOT_AVATAR_URL,
+                    username: "Division Report System"
+                }) 
+            }); 
+        }
 
         async function submitForm() {
             const btn = document.getElementById('submitBtn');
