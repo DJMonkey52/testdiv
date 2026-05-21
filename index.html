@@ -15,45 +15,45 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #0d1a12;
+            background: #0f0c0a;
             min-height: 100vh;
         }
 
         body.light {
-            background: #f5f0e6;
+            background: #faf6ef;
         }
 
         :root {
-            --glass-bg: rgba(20, 32, 24, 0.94);
-            --glass-border: rgba(110, 85, 55, 0.5);
-            --text-primary: #e8e0cd;
-            --text-secondary: #c8bc9a;
-            --text-muted: #9e8f6e;
-            --accent: #8b7355;
-            --accent-glow: #a68966;
-            --accent-dark: #5d4e3a;
-            --success: #6f9e6f;
+            --glass-bg: rgba(28, 22, 18, 0.94);
+            --glass-border: rgba(101, 67, 45, 0.55);
+            --text-primary: #f0e2d4;
+            --text-secondary: #d4c0ac;
+            --text-muted: #a48d76;
+            --accent: #8b5a3e;
+            --accent-glow: #b07850;
+            --accent-dark: #5e3a28;
+            --success: #6f8f6f;
             --danger: #b87a5c;
-            --border-light: rgba(110, 85, 55, 0.25);
+            --border-light: rgba(101, 67, 45, 0.3);
             --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.5);
             --shadow-md: 0 20px 35px -10px rgba(0, 0, 0, 0.6);
-            --input-bg: rgba(30, 45, 35, 0.95);
-            --card-hover: rgba(139, 115, 85, 0.12);
+            --input-bg: rgba(38, 30, 24, 0.95);
+            --card-hover: rgba(139, 90, 62, 0.12);
         }
 
         body.light {
             --glass-bg: rgba(255, 252, 240, 0.96);
-            --glass-border: rgba(139, 115, 85, 0.35);
+            --glass-border: rgba(139, 90, 62, 0.35);
             --text-primary: #2c2418;
-            --text-secondary: #5a4a36;
-            --text-muted: #8b7355;
-            --accent: #8b7355;
-            --accent-glow: #a68966;
-            --accent-dark: #5d4e3a;
+            --text-secondary: #5a4635;
+            --text-muted: #8b6e55;
+            --accent: #8b5a3e;
+            --accent-glow: #a6704a;
+            --accent-dark: #5e3a28;
             --border-light: rgba(0, 0, 0, 0.08);
             --input-bg: rgba(255, 255, 245, 0.98);
-            --card-hover: rgba(139, 115, 85, 0.08);
-            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --card-hover: rgba(139, 90, 62, 0.08);
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.08);
             --shadow-md: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
         }
 
@@ -98,13 +98,13 @@
             align-items: center;
             justify-content: center;
             font-size: 26px;
-            color: #f0ebdf;
+            color: #f5e6d9;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             animation: float 3s ease-in-out infinite;
         }
 
         .logo-icon i {
-            font-size: 28px;
+            font-size: 26px;
             filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
         }
 
@@ -116,7 +116,7 @@
         .logo h1 {
             font-size: 2.2rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #e8e0cd, var(--accent-glow));
+            background: linear-gradient(135deg, #f0e2d4, var(--accent-glow));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -159,7 +159,7 @@
         .theme-toggle:hover {
             border-color: var(--accent);
             transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 0 20px rgba(139, 115, 85, 0.4);
+            box-shadow: 0 0 20px rgba(139, 90, 62, 0.4);
         }
 
         .page {
@@ -203,7 +203,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(139, 115, 85, 0.15), transparent);
+            background: linear-gradient(90deg, transparent, rgba(139, 90, 62, 0.15), transparent);
             transition: left 0.6s ease;
         }
 
@@ -220,7 +220,7 @@
         .main-card-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, rgba(139, 115, 85, 0.25), rgba(93, 78, 58, 0.15));
+            background: linear-gradient(135deg, rgba(139, 90, 62, 0.25), rgba(94, 58, 40, 0.15));
             border-radius: 28px;
             display: flex;
             align-items: center;
@@ -278,7 +278,7 @@
         .back-btn:hover {
             border-color: var(--accent);
             transform: translateX(-8px);
-            box-shadow: 0 0 20px rgba(139, 115, 85, 0.4);
+            box-shadow: 0 0 20px rgba(139, 90, 62, 0.4);
         }
 
         .glass-card {
@@ -296,7 +296,7 @@
         }
 
         .card-header {
-            background: linear-gradient(135deg, rgba(139, 115, 85, 0.2), rgba(93, 78, 58, 0.1));
+            background: linear-gradient(135deg, rgba(139, 90, 62, 0.2), rgba(94, 58, 40, 0.1));
             padding: 20px 28px;
             border-bottom: 1px solid var(--border-light);
         }
@@ -350,7 +350,7 @@
         .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.3);
+            box-shadow: 0 0 0 3px rgba(139, 90, 62, 0.3);
             transform: scale(1.01);
         }
 
@@ -361,7 +361,7 @@
         }
 
         .period-info {
-            background: rgba(139, 115, 85, 0.12);
+            background: rgba(139, 90, 62, 0.12);
             border-radius: 14px;
             padding: 12px 16px;
             text-align: center;
@@ -528,7 +528,7 @@
         .proof-item input:focus {
             border-color: var(--accent);
             outline: none;
-            box-shadow: 0 0 0 2px rgba(139,115,85,0.2);
+            box-shadow: 0 0 0 2px rgba(139,90,62,0.2);
         }
 
         .remove-proof {
@@ -547,7 +547,7 @@
         }
 
         .add-proof-btn {
-            background: rgba(139, 115, 85, 0.2);
+            background: rgba(139, 90, 62, 0.2);
             border: 1px dashed var(--accent);
             border-radius: 12px;
             padding: 8px 14px;
@@ -562,7 +562,7 @@
         }
 
         .add-proof-btn:hover {
-            background: rgba(139, 115, 85, 0.35);
+            background: rgba(139, 90, 62, 0.35);
             transform: translateY(-2px);
         }
 
@@ -580,13 +580,13 @@
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 700;
-            color: #f0ebdf;
+            color: #f5e6d9;
             transition: all 0.2s ease;
         }
 
         .add-btn {
             width: 100%;
-            background: rgba(139, 115, 85, 0.12);
+            background: rgba(139, 90, 62, 0.12);
             border: 2px dashed var(--accent);
             border-radius: 18px;
             padding: 14px;
@@ -602,7 +602,7 @@
         }
 
         .add-btn:hover {
-            background: rgba(139, 115, 85, 0.25);
+            background: rgba(139, 90, 62, 0.25);
             transform: scale(1.02);
         }
 
@@ -626,7 +626,7 @@
         }
 
         .total-points-bar {
-            background: rgba(139, 115, 85, 0.15);
+            background: rgba(139, 90, 62, 0.15);
             border-radius: 20px;
             padding: 15px 22px;
             margin: 20px 0 18px;
@@ -654,7 +654,7 @@
             border-radius: 24px;
             font-size: 1rem;
             font-weight: 700;
-            color: #f0ebdf;
+            color: #f5e6d9;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -683,7 +683,7 @@
         .submit-btn:hover {
             transform: translateY(-3px);
             filter: brightness(1.05);
-            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.5);
+            box-shadow: 0 10px 30px rgba(139, 90, 62, 0.5);
         }
 
         .footer-signature {
@@ -713,9 +713,9 @@
         }
 
         .alert.success {
-            background: rgba(111, 158, 111, 0.15);
-            border-left: 4px solid #6f9e6f;
-            color: #8fbb8f;
+            background: rgba(111, 143, 111, 0.15);
+            border-left: 4px solid #6f8f6f;
+            color: #8faa8f;
             display: flex;
         }
 
@@ -744,7 +744,7 @@
             .logo h1 { font-size: 1.8rem; }
             .logo { padding: 8px 20px; }
             .logo-icon { width: 40px; height: 40px; font-size: 20px; }
-            .logo-icon i { font-size: 22px; }
+            .logo-icon i { font-size: 20px; }
         }
     </style>
 </head>
@@ -758,7 +758,7 @@
         <div class="header">
             <div class="logo">
                 <div class="logo-icon">
-                    <i class="fas fa-tree"></i>
+                    <i class="fas fa-shield-alt"></i>
                 </div>
                 <h1>Division</h1>
             </div>
@@ -913,7 +913,7 @@
             });
         }
 
-        async function sendToDiscord(webhook, title, fields, color = 0x8b7355) { await fetch(webhook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ content: `${ROLES_TAG}\n🌳 **НОВЫЙ ОТЧЁТ DIVISION** 🌳`, embeds: [{ title, color, fields, footer: { text: "Division | By Alexandr DeHaus & Evgeny Bauer" }, timestamp: new Date().toISOString() }], avatar_url: "https://cdn-icons-png.flaticon.com/512/3159/3159225.png" }) }); }
+        async function sendToDiscord(webhook, title, fields, color = 0x8b5a3e) { await fetch(webhook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ content: `${ROLES_TAG}\n🟫 **НОВЫЙ ОТЧЁТ DIVISION** 🟫`, embeds: [{ title, color, fields, footer: { text: "Division | By Alexandr DeHaus & Evgeny Bauer" }, timestamp: new Date().toISOString() }], avatar_url: "https://cdn-icons-png.flaticon.com/512/3159/3159225.png" }) }); }
 
         async function submitForm() {
             const btn = document.getElementById('submitBtn');
