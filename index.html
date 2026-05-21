@@ -93,13 +93,11 @@
             color: #ffffff;
             box-shadow: var(--shadow-sm);
             animation: float 3s ease-in-out infinite;
-            background-image: url('https://i.imgur.com/7E4bN3I.png');
-            background-size: cover;
-            background-position: center;
         }
 
         .logo-icon i {
-            display: none;
+            font-size: 34px;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
         }
 
         @keyframes float {
@@ -368,17 +366,43 @@
             margin-bottom: 16px;
             border: 1px solid var(--border-light);
             transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            animation: actionSlideIn 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            animation: actionSlideIn 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+            transform-origin: top;
         }
 
         @keyframes actionSlideIn {
-            from { opacity: 0; transform: translateX(-30px) scale(0.95); }
-            to { opacity: 1; transform: translateX(0) scale(1); }
+            from { 
+                opacity: 0; 
+                transform: translateY(-20px) scale(0.95); 
+                max-height: 0;
+                margin-bottom: 0;
+                padding: 0 18px;
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+                max-height: 500px;
+                margin-bottom: 16px;
+                padding: 18px;
+            }
         }
 
-        @keyframes actionRemove {
-            from { opacity: 1; transform: translateX(0) scale(1); max-height: 500px; margin-bottom: 16px; padding: 18px; }
-            to { opacity: 0; transform: translateX(50px) scale(0.9); max-height: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0; border: none; }
+        @keyframes actionRemoveAnim {
+            from { 
+                opacity: 1; 
+                transform: translateX(0) scale(1); 
+                max-height: 500px; 
+                margin-bottom: 16px; 
+                padding: 18px;
+            }
+            to { 
+                opacity: 0; 
+                transform: translateX(50px) scale(0.9); 
+                max-height: 0; 
+                margin-bottom: 0; 
+                padding: 0 18px;
+                border-color: transparent;
+            }
         }
 
         .action-item:hover {
@@ -472,17 +496,18 @@
             background: rgba(0,0,0,0.05);
             border-radius: 12px;
             padding: 8px 12px;
-            animation: proofFadeIn 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            animation: proofFadeIn 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+            transform-origin: left;
         }
 
         @keyframes proofFadeIn {
-            from { opacity: 0; transform: translateX(-15px); }
-            to { opacity: 1; transform: translateX(0); }
+            from { opacity: 0; transform: translateX(-15px) scale(0.9); }
+            to { opacity: 1; transform: translateX(0) scale(1); }
         }
 
-        @keyframes proofRemove {
+        @keyframes proofRemoveAnim {
             from { opacity: 1; transform: translateX(0) scale(1); max-height: 60px; margin-bottom: 10px; padding: 8px 12px; }
-            to { opacity: 0; transform: translateX(-20px) scale(0.9); max-height: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0; }
+            to { opacity: 0; transform: translateX(-20px) scale(0.9); max-height: 0; margin-bottom: 0; padding: 0 12px; }
         }
 
         .proof-item input {
@@ -493,6 +518,13 @@
             border: 1px solid var(--border-light);
             border-radius: 10px;
             color: var(--text-primary);
+            transition: all 0.2s ease;
+        }
+
+        .proof-item input:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(184,124,79,0.2);
         }
 
         .remove-proof {
@@ -503,6 +535,11 @@
             padding: 8px 12px;
             border-radius: 10px;
             transition: all 0.2s ease;
+        }
+
+        .remove-proof:hover {
+            background: rgba(201, 125, 96, 0.4);
+            transform: scale(1.05);
         }
 
         .add-proof-btn {
@@ -540,6 +577,7 @@
             font-size: 0.85rem;
             font-weight: 700;
             color: #ffffff;
+            transition: all 0.2s ease;
         }
 
         .add-btn {
@@ -571,6 +609,12 @@
             background: rgba(0, 0, 0, 0.03);
             border-radius: 20px;
             transition: all 0.3s ease;
+            animation: fadeScale 0.3s ease;
+        }
+
+        @keyframes fadeScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         body.light .empty-state {
@@ -585,6 +629,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: all 0.3s ease;
         }
 
         .total-points-value {
@@ -594,6 +639,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            transition: all 0.2s ease;
         }
 
         .submit-btn {
@@ -676,6 +722,17 @@
             display: flex;
         }
 
+        /* Анимация обновления баллов */
+        @keyframes pointsPulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .points-badge-update {
+            animation: pointsPulse 0.3s ease;
+        }
+
         @media (max-width: 700px) {
             .main-cards-grid { grid-template-columns: 1fr; gap: 25px; }
             .action-fields { grid-template-columns: 1fr; }
@@ -694,7 +751,9 @@
     <div class="container">
         <div class="header">
             <div class="logo">
-                <div class="logo-icon"></div>
+                <div class="logo-icon">
+                    <i class="fas fa-shield-halbed"></i>
+                </div>
                 <h1>Division</h1>
             </div>
             <p class="subtitle">Division | Система отчетов</p>
@@ -795,7 +854,7 @@
         function calcPoints(a) { return (ACTIVITY_POINTS[a.type] || 0) * (parseInt(a.count) || 1); }
         function totalPoints() { return currentActions.reduce((s, a) => s + calcPoints(a), 0); }
 
-        function showAlert(container, msg, type) { /* ... */ 
+        function showAlert(container, msg, type) {
             const c = document.getElementById(container);
             if (!c) return;
             const div = document.createElement('div');
@@ -807,12 +866,24 @@
 
         function showMainPage() { document.querySelectorAll('.page').forEach(p => p.style.display = 'none'); document.getElementById('mainPage').style.display = 'block'; }
 
-        function renderActionsList() { /* full logic */ 
+        function animateTotalPoints() {
+            const totalSpan = document.getElementById('totalPoints');
+            totalSpan.classList.add('points-badge-update');
+            setTimeout(() => totalSpan.classList.remove('points-badge-update'), 300);
+        }
+
+        function updateTotalDisplay() { 
+            document.getElementById('totalPoints').innerText = totalPoints();
+            animateTotalPoints();
+        }
+
+        function renderActionsList() {
             const container = document.getElementById('actionsList');
             const emptyDiv = document.getElementById('emptyActions');
             if (currentActions.length === 0) {
                 container.innerHTML = '';
                 emptyDiv.style.display = 'block';
+                emptyDiv.style.animation = 'fadeScale 0.3s ease';
                 updateTotalDisplay();
                 return;
             }
@@ -822,38 +893,110 @@
             updateTotalDisplay();
         }
 
-        function createActionHTML(a, idx) { return `
-            <div class="action-item" data-idx="${idx}">
-                <div class="action-header"><div class="action-title"><i class="fas fa-tag"></i> ДЕЙСТВИЕ #${idx+1}</div><button class="remove-action" data-idx="${idx}"><i class="fas fa-trash"></i> Удалить</button></div>
-                <div class="action-fields"><div class="action-field"><label>ТИП АКТИВНОСТИ</label><select class="action-type" data-idx="${idx}"><option value="">-- Выберите --</option>${ACTIVITY_NAMES.map(n => `<option value="${n}" data-points="${ACTIVITY_POINTS[n]}" ${a.type === n ? 'selected' : ''}>${n} (${ACTIVITY_POINTS[n]} баллов)</option>`).join('')}</select></div>
-                <div class="action-field"><label>КОЛ-ВО</label><input type="number" class="action-count" data-idx="${idx}" value="${a.count || 1}" min="1"></div>
-                <div class="proofs-section"><label><i class="fas fa-images"></i> ДОКАЗАТЕЛЬСТВА (ссылки)</label><div class="proofs-list">${(a.proofs || ['']).map((p, pi) => `<div class="proof-item"><input type="text" class="proof-input" data-action="${idx}" data-proof="${pi}" value="${escapeHtml(p)}" placeholder="https://пример.com/скриншот">${(a.proofs.length > 1) ? `<button class="remove-proof" data-action="${idx}" data-proof="${pi}"><i class="fas fa-times"></i></button>` : ''}</div>`).join('')}</div>
-                <button class="add-proof-btn" data-action="${idx}"><i class="fas fa-plus"></i> Добавить доказательство</button></div></div>
-                <div class="points-row"><span class="points-badge"><i class="fas fa-star"></i> БАЛЛЫ: ${calcPoints(a)}</span></div>
-            </div>`; }
+        function createActionHTML(a, idx) {
+            return `
+                <div class="action-item" data-idx="${idx}" data-original-idx="${idx}">
+                    <div class="action-header"><div class="action-title"><i class="fas fa-tag"></i> ДЕЙСТВИЕ #${idx+1}</div><button class="remove-action" data-idx="${idx}"><i class="fas fa-trash"></i> Удалить</button></div>
+                    <div class="action-fields"><div class="action-field"><label>ТИП АКТИВНОСТИ</label><select class="action-type" data-idx="${idx}"><option value="">-- Выберите --</option>${ACTIVITY_NAMES.map(n => `<option value="${n}" ${a.type === n ? 'selected' : ''}>${n} (${ACTIVITY_POINTS[n]} баллов)</option>`).join('')}</select></div>
+                    <div class="action-field"><label>КОЛ-ВО</label><input type="number" class="action-count" data-idx="${idx}" value="${a.count || 1}" min="1"></div>
+                    <div class="proofs-section"><label><i class="fas fa-images"></i> ДОКАЗАТЕЛЬСТВА (ссылки)</label><div class="proofs-list">${(a.proofs || ['']).map((p, pi) => `<div class="proof-item" data-proof-idx="${pi}"><input type="text" class="proof-input" data-action="${idx}" data-proof="${pi}" value="${escapeHtml(p)}" placeholder="https://пример.com/скриншот">${(a.proofs.length > 1) ? `<button class="remove-proof" data-action="${idx}" data-proof="${pi}"><i class="fas fa-times"></i></button>` : ''}</div>`).join('')}</div>
+                    <button class="add-proof-btn" data-action="${idx}"><i class="fas fa-plus"></i> Добавить доказательство</button></div></div>
+                    <div class="points-row"><span class="points-badge" data-points-idx="${idx}"><i class="fas fa-star"></i> БАЛЛЫ: ${calcPoints(a)}</span></div>
+                </div>`;
+        }
 
-        function addAction() { currentActions.push({ type: '', count: 1, proofs: [''] }); renderActionsList(); }
-        function attachAllEvents() { /* simplified but functional */ 
+        function addAction() { 
+            currentActions.push({ type: '', count: 1, proofs: [''] }); 
+            renderActionsList(); 
+        }
+
+        function attachAllEvents() {
             const container = document.getElementById('actionsList');
+            
             container.querySelectorAll('.action-item').forEach(el => {
                 const idx = parseInt(el.dataset.idx);
-                el.querySelector('.remove-action').onclick = () => { currentActions.splice(idx, 1); renderActionsList(); };
+                
+                const removeBtn = el.querySelector('.remove-action');
+                removeBtn.onclick = () => {
+                    el.style.animation = 'actionRemoveAnim 0.3s ease forwards';
+                    setTimeout(() => {
+                        currentActions.splice(idx, 1);
+                        if (currentActions.length === 0) {
+                            const emptyDiv = document.getElementById('emptyActions');
+                            container.innerHTML = '';
+                            emptyDiv.style.display = 'block';
+                            emptyDiv.style.animation = 'fadeScale 0.3s ease';
+                            updateTotalDisplay();
+                        } else {
+                            renderActionsList();
+                        }
+                    }, 280);
+                };
+                
                 const typeSel = el.querySelector('.action-type');
-                typeSel.onchange = () => { currentActions[idx].type = typeSel.value; renderActionsList(); };
+                typeSel.onchange = () => { 
+                    currentActions[idx].type = typeSel.value; 
+                    const pointsSpan = el.querySelector('.points-badge');
+                    pointsSpan.innerHTML = `<i class="fas fa-star"></i> БАЛЛЫ: ${calcPoints(currentActions[idx])}`;
+                    pointsSpan.classList.add('points-badge-update');
+                    setTimeout(() => pointsSpan.classList.remove('points-badge-update'), 300);
+                    updateTotalDisplay();
+                };
+                
                 const cntInp = el.querySelector('.action-count');
-                cntInp.oninput = () => { currentActions[idx].count = Math.max(1, parseInt(cntInp.value) || 1); renderActionsList(); };
-                el.querySelectorAll('.proof-input').forEach(inp => inp.onchange = () => { if(currentActions[idx]?.proofs) currentActions[idx].proofs[parseInt(inp.dataset.proof)] = inp.value; });
-                el.querySelectorAll('.remove-proof').forEach(btn => btn.onclick = (e) => { e.stopPropagation(); const pi = parseInt(btn.dataset.proof); if(currentActions[idx].proofs.length>1){ currentActions[idx].proofs.splice(pi,1); renderActionsList(); } });
-                el.querySelector('.add-proof-btn').onclick = () => { if(!currentActions[idx].proofs) currentActions[idx].proofs=['']; currentActions[idx].proofs.push(''); renderActionsList(); };
+                cntInp.oninput = () => { 
+                    currentActions[idx].count = Math.max(1, parseInt(cntInp.value) || 1); 
+                    const pointsSpan = el.querySelector('.points-badge');
+                    pointsSpan.innerHTML = `<i class="fas fa-star"></i> БАЛЛЫ: ${calcPoints(currentActions[idx])}`;
+                    pointsSpan.classList.add('points-badge-update');
+                    setTimeout(() => pointsSpan.classList.remove('points-badge-update'), 300);
+                    updateTotalDisplay();
+                };
+                
+                el.querySelectorAll('.proof-input').forEach(inp => {
+                    inp.onchange = () => { if(currentActions[idx]?.proofs) currentActions[idx].proofs[parseInt(inp.dataset.proof)] = inp.value; };
+                });
+                
+                el.querySelectorAll('.remove-proof').forEach(btn => {
+                    btn.onclick = (e) => { 
+                        e.stopPropagation(); 
+                        const pi = parseInt(btn.dataset.proof); 
+                        const proofItem = btn.closest('.proof-item');
+                        if(currentActions[idx].proofs.length > 1){
+                            proofItem.style.animation = 'proofRemoveAnim 0.25s ease forwards';
+                            setTimeout(() => {
+                                currentActions[idx].proofs.splice(pi, 1);
+                                renderActionsList();
+                            }, 240);
+                        }
+                    };
+                });
+                
+                const addProofBtn = el.querySelector('.add-proof-btn');
+                addProofBtn.onclick = () => {
+                    if(!currentActions[idx].proofs) currentActions[idx].proofs = [''];
+                    currentActions[idx].proofs.push('');
+                    renderActionsList();
+                };
             });
         }
-        function updateTotalDisplay() { document.getElementById('totalPoints').innerText = totalPoints(); }
 
-        async function sendToDiscord(webhook, title, fields, color = 0xb87c4f) { await fetch(webhook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ content: `${ROLES_TAG}\n🟤 **НОВЫЙ ОТЧЁТ DIVISION** 🟤`, embeds: [{ title, color, fields, footer: { text: "Division | By Alexandr DeHaus & Evgeny Bauer" }, timestamp: new Date().toISOString() }], avatar_url: "https://i.imgur.com/7E4bN3I.png" }) }); }
+        async function sendToDiscord(webhook, title, fields, color = 0xb87c4f) { 
+            await fetch(webhook, { 
+                method: 'POST', 
+                headers: { 'Content-Type': 'application/json' }, 
+                body: JSON.stringify({ 
+                    content: `${ROLES_TAG}\n🟤 **НОВЫЙ ОТЧЁТ DIVISION** 🟤`, 
+                    embeds: [{ title, color, fields, footer: { text: "Division | By Alexandr DeHaus & Evgeny Bauer" }, timestamp: new Date().toISOString() }], 
+                    avatar_url: "https://cdn-icons-png.flaticon.com/512/3159/3159225.png" 
+                }) 
+            }); 
+        }
 
         async function submitForm() {
             const btn = document.getElementById('submitBtn');
-            btn.disabled = true; const originalHTML = btn.innerHTML;
+            btn.disabled = true; 
+            const originalHTML = btn.innerHTML;
             btn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> ОТПРАВКА...';
             try {
                 if (currentType === 'weekly') {
@@ -863,7 +1006,12 @@
                     let acts = '', total = 0;
                     currentActions.forEach((a,i) => { const pts = calcPoints(a); total += pts; const proofs = (a.proofs?.filter(p=>p).map(p=>`• ${p}`).join('\n') || 'Нет'); acts += `**${i+1}. ${a.type || 'Не выбрано'}** ×${a.count||1} = ${pts} баллов\n📎 Доказательства:\n${proofs}\n\n`; });
                     if(currentActions.length===0) acts = 'Нет действий';
-                    await sendToDiscord(WEBHOOKS.weekly, '📅 Еженедельный отчёт Division', [{ name: '👮 Сотрудник', value: name, inline: true }, { name: '🏅 Звание', value: rank, inline: true }, { name: '📊 Активности', value: acts.substring(0,900) }, { name: '🏆 ИТОГО БАЛЛОВ', value: `${total}`, inline: true }]);
+                    await sendToDiscord(WEBHOOKS.weekly, '📅 Еженедельный отчёт Division', [
+                        { name: '👮 Сотрудник', value: name, inline: true }, 
+                        { name: '🏅 Звание', value: rank, inline: true }, 
+                        { name: '📊 Активности', value: acts.substring(0,900) }, 
+                        { name: '🏆 ИТОГО БАЛЛОВ', value: `${total}`, inline: true }
+                    ]);
                     showAlert('formAlert', '✅ Отчёт отправлен!', 'success');
                     resetForm();
                 } else if (currentType === 'promotion') {
@@ -874,16 +1022,46 @@
                     let acts = '', total = 0;
                     currentActions.forEach((a,i) => { const pts = calcPoints(a); total += pts; const proofs = (a.proofs?.filter(p=>p).map(p=>`• ${p}`).join('\n') || 'Нет'); acts += `**${i+1}. ${a.type || 'Не выбрано'}** ×${a.count||1} = ${pts} баллов\n📎 Доказательства:\n${proofs}\n\n`; });
                     if(currentActions.length===0) acts = 'Нет достижений';
-                    await sendToDiscord(WEBHOOKS.promotion, '⭐ Запрос на повышение звания Division', [{ name: '👤 Сотрудник', value: name, inline: true }, { name: '🎖️ Текущее звание', value: curRank, inline: true }, { name: '⭐ Желаемое звание', value: desRank, inline: true }, { name: '📜 Достижения', value: acts.substring(0,900) }, { name: '🏆 Сумма баллов', value: `${total}`, inline: true }]);
+                    await sendToDiscord(WEBHOOKS.promotion, '⭐ Запрос на повышение звания Division', [
+                        { name: '👤 Сотрудник', value: name, inline: true }, 
+                        { name: '🎖️ Текущее звание', value: curRank, inline: true }, 
+                        { name: '⭐ Желаемое звание', value: desRank, inline: true }, 
+                        { name: '📜 Достижения', value: acts.substring(0,900) }, 
+                        { name: '🏆 Сумма баллов', value: `${total}`, inline: true }
+                    ]);
                     showAlert('formAlert', '✅ Запрос отправлен!', 'success');
                     resetForm();
                 }
             } catch(err) { showAlert('formAlert', `❌ Ошибка: ${err.message}`, 'error'); }
             finally { btn.disabled = false; btn.innerHTML = originalHTML; }
         }
-        function resetForm() { currentActions = []; renderActionsList(); if(currentType==='weekly'){ const wName=document.getElementById('wName'); if(wName) wName.value=''; const wRank=document.getElementById('wRank'); if(wRank) wRank.value=''; setDefaultDates(); } else if(currentType==='promotion'){ const pName=document.getElementById('pName'); if(pName) pName.value=''; const pCur=document.getElementById('pCurrentRank'); if(pCur) pCur.value=''; const pDes=document.getElementById('pDesiredRank'); if(pDes) pDes.value=''; } }
-        function setDefaultDates() { const today=new Date(); const monday=new Date(today); monday.setDate(today.getDate()-(today.getDay()===0?6:today.getDay()-1)); const sunday=new Date(monday); sunday.setDate(monday.getDate()+6); const start=document.getElementById('wStart'), end=document.getElementById('wEnd'), info=document.getElementById('periodInfo'); if(start&&end){ start.value=monday.toISOString().split('T')[0]; end.value=sunday.toISOString().split('T')[0]; if(info) info.innerHTML=`${formatDate(start.value)} – ${formatDate(end.value)} (7 дн.)`; } }
-        function updatePeriodInfo() { const start=document.getElementById('wStart')?.value, end=document.getElementById('wEnd')?.value, info=document.getElementById('periodInfo'); if(info&&start&&end){ const days=Math.ceil((new Date(end)-new Date(start))/86400000)+1; info.innerHTML=`${formatDate(start)} – ${formatDate(end)} (${days} дн.)`; } }
+        
+        function resetForm() { 
+            currentActions = []; 
+            renderActionsList(); 
+            if(currentType==='weekly'){ 
+                const wName=document.getElementById('wName'); if(wName) wName.value=''; 
+                const wRank=document.getElementById('wRank'); if(wRank) wRank.value=''; 
+                setDefaultDates(); 
+            } else if(currentType==='promotion'){ 
+                const pName=document.getElementById('pName'); if(pName) pName.value=''; 
+                const pCur=document.getElementById('pCurrentRank'); if(pCur) pCur.value=''; 
+                const pDes=document.getElementById('pDesiredRank'); if(pDes) pDes.value=''; 
+            } 
+        }
+        
+        function setDefaultDates() { 
+            const today=new Date(); const monday=new Date(today); 
+            monday.setDate(today.getDate()-(today.getDay()===0?6:today.getDay()-1)); 
+            const sunday=new Date(monday); sunday.setDate(monday.getDate()+6); 
+            const start=document.getElementById('wStart'), end=document.getElementById('wEnd'), info=document.getElementById('periodInfo'); 
+            if(start&&end){ start.value=monday.toISOString().split('T')[0]; end.value=sunday.toISOString().split('T')[0]; if(info) info.innerHTML=`${formatDate(start.value)} – ${formatDate(end.value)} (7 дн.)`; } 
+        }
+        
+        function updatePeriodInfo() { 
+            const start=document.getElementById('wStart')?.value, end=document.getElementById('wEnd')?.value, info=document.getElementById('periodInfo'); 
+            if(info&&start&&end){ const days=Math.ceil((new Date(end)-new Date(start))/86400000)+1; info.innerHTML=`${formatDate(start)} – ${formatDate(end)} (${days} дн.)`; } 
+        }
 
         function showFormPage(type) {
             currentType=type; currentActions=[];
@@ -895,7 +1073,9 @@
                 title.innerHTML='<i class="fas fa-calendar-week"></i> 📊 Еженедельный отчёт Division';
                 fieldsDiv.innerHTML=`<div class="input-group"><label><i class="fas fa-user"></i> ИМЯ ФАМИЛИЯ (никнейм)</label><input type="text" id="wName" placeholder="Alexandr DeHaus"></div><div class="input-group"><label><i class="fas fa-medal"></i> ВАШЕ ЗВАНИЕ</label><select id="wRank"><option value="">-- Выберите --</option>${rankOptions}</select></div><div class="period-row"><div class="input-group"><label><i class="fas fa-calendar-alt"></i> ДАТА НАЧАЛА</label><input type="date" id="wStart"></div><div class="input-group"><label><i class="fas fa-calendar-alt"></i> ДАТА ОКОНЧАНИЯ</label><input type="date" id="wEnd"></div></div><div class="period-info" id="periodInfo"></div>`;
                 actionsSection.style.display='block'; totalBar.style.display='flex';
-                setDefaultDates(); document.getElementById('wStart')?.addEventListener('change',updatePeriodInfo); document.getElementById('wEnd')?.addEventListener('change',updatePeriodInfo);
+                setDefaultDates(); 
+                document.getElementById('wStart')?.addEventListener('change',updatePeriodInfo); 
+                document.getElementById('wEnd')?.addEventListener('change',updatePeriodInfo);
             } else if(type==='promotion'){
                 title.innerHTML='<i class="fas fa-arrow-up"></i> ⭐ Запрос на повышение звания Division';
                 fieldsDiv.innerHTML=`<div class="input-group"><label><i class="fas fa-user"></i> ПОЛНОЕ ИМЯ</label><input type="text" id="pName" placeholder="Alexandr DeHaus"></div><div class="input-group"><label><i class="fas fa-arrow-down"></i> ТЕКУЩЕЕ ЗВАНИЕ</label><select id="pCurrentRank"><option value="">-- Выберите --</option>${rankOptions}</select></div><div class="input-group"><label><i class="fas fa-arrow-up"></i> ЖЕЛАЕМОЕ ЗВАНИЕ</label><select id="pDesiredRank"><option value="">-- Выберите --</option>${rankOptions}</select></div>`;
@@ -908,6 +1088,7 @@
         document.getElementById('addActionBtn').onclick=addAction;
         document.getElementById('submitBtn').onclick=submitForm;
         document.querySelectorAll('.main-card').forEach(card=>card.onclick=()=>showFormPage(card.dataset.type));
+        
         const themeSwitch=document.getElementById('themeSwitch');
         themeSwitch.onclick=()=>{ document.body.classList.toggle('light'); const isLight=document.body.classList.contains('light'); localStorage.setItem('mpbTheme',isLight?'light':'dark'); const icon=themeSwitch.querySelector('i'); const span=themeSwitch.querySelector('span'); if(isLight){ icon.className='fas fa-moon'; span.innerText='Тёмная тема'; }else{ icon.className='fas fa-sun'; span.innerText='Светлая тема'; } };
         if(localStorage.getItem('mpbTheme')==='light'){ document.body.classList.add('light'); themeSwitch.querySelector('i').className='fas fa-moon'; themeSwitch.querySelector('span').innerText='Тёмная тема'; }
